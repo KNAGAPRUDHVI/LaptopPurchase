@@ -1,0 +1,16 @@
+server:
+  port: 2238
+spring:
+  application:
+    name: laptop_store
+  datasource:
+    url: jdbc:mysql://localhost:3306/laptop_store
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: update
+      show-sql: true
