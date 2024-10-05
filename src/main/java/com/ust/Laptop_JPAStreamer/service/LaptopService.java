@@ -20,9 +20,9 @@ public class LaptopService {
 
     public List<Laptop> getLaptops(String brand, String specifications, double maxPrice) {
         return jpaStreamer.stream(Laptop.class)
-                          .filter(laptop -> (brand == null || laptop.getBrand().equalsIgnoreCase(brand)) &&
-                                            (specifications == null || laptop.getSpecifications().contains(specifications)) &&
-                                            laptop.getPrice() <= maxPrice)
+                          .filter(laptop -> (brand.map(laptop.getBrand().equalsIgnoreCase(brand))) &&
+                                            (specifications.map(laptop.getSpecifications().contains(specifications)) &&
+                                            laptop.getPrice() <= maxPrice))
                           .collect(Collectors.toList());
         
     }
